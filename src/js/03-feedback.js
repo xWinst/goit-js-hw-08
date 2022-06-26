@@ -20,13 +20,21 @@ function fillData(){
     const data = localStorage.getItem(FORM_DATA);
     if (data) {
         userData = JSON.parse(localStorage.getItem(FORM_DATA));
-        email.value = userData.email;
-        message.value = userData.message;
+        if(userData.email) {
+            email.value = userData.email;
+        }
+        if(userData.message) {
+            message.value = userData.message;
+        }
     }
 }
 
 function submitData(event){
     event.preventDefault();
+    if (email.value === "" || message.value === "") {
+        alert("Please fill in all the fields!");
+        return;
+      }
     console.log(userData);
     userData = {};
     form.reset();

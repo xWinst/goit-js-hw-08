@@ -5,7 +5,9 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 const BREAKPOINT = "videoplayer-current-time";
 
-player.setCurrentTime(localStorage.getItem(BREAKPOINT));
+if (localStorage.getItem(BREAKPOINT)){
+    player.setCurrentTime(localStorage.getItem(BREAKPOINT));
+}
 
 player.on('timeupdate', throttle(time => 
     localStorage.setItem(BREAKPOINT, time.seconds), 1000));
