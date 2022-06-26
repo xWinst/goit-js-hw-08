@@ -14,7 +14,6 @@ form.addEventListener("submit", submitData);
 function saveData(event){
     userData[event.target.name] = event.target.value;
     localStorage.setItem(FORM_DATA, JSON.stringify(userData));
-    console.log(email.textContent);
 }
 
 function fillData(){
