@@ -1,11 +1,6 @@
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
-// Add imports above this line
-import { galleryItems } from './gallery-items';
-// Change code below this line
-
 import * as basicLightbox from 'basiclightbox';
 import 'basicLightbox/dist/basicLightbox.min.css';
+import { galleryItems } from './gallery-items';
 
 const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', selectImage);
@@ -26,22 +21,11 @@ galleryItems.forEach(
 
 gallery.insertAdjacentHTML('beforeend', markup);
 
-// const lightbox = new SimpleLightbox('.gallery a', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-//   captionPosition: 'bottom',
-// });
-
-//console.log(galleryItems);
-
 function selectImage(event) {
   event.preventDefault();
-  // let ar = new URL();
-  // console.log(ar);
   if (event.target.nodeName !== 'IMG') {
     return;
   }
-  // let lib = require("./images/main_box.jpg");
   const instance = basicLightbox.create(
     `<div>
             <h2>llsdflskd</h2>
@@ -57,8 +41,8 @@ function selectImage(event) {
         </div>`,
 
     {
-      onShow: () => window.addEventListener('keydown', clickEsc), // Это доп задание, для проверки работоспособности можно
-      onClose: () => window.removeEventListener('keydown', clickEsc), //                                         и без него
+      onShow: () => window.addEventListener('keydown', clickEsc),
+      onClose: () => window.removeEventListener('keydown', clickEsc),
     }
   );
   console.log('jjj00');
@@ -66,7 +50,6 @@ function selectImage(event) {
 }
 
 function clickEsc(event) {
-  // Это тоже относится к доп
   if (event.key === 'Escape') {
     instance.close();
   }
