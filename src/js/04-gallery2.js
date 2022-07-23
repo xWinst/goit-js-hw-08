@@ -1,5 +1,5 @@
 import * as basicLightbox from 'basiclightbox';
-import 'basicLightbox/dist/basicLightbox.min.css';
+// import 'basicLightbox/dist/basicLightbox.min.css';
 import { galleryItems } from './gallery-items';
 
 const gallery = document.querySelector('.gallery');
