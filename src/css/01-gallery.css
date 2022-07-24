@@ -41,6 +41,10 @@
   cursor: zoom-in;
 }
 
+.logo_i:hover {
+  fill: aqua;
+}
+
 .basicLightbox {
   position: fixed;
   display: flex;

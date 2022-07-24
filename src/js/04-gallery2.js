@@ -3,8 +3,8 @@ import * as basicLightbox from 'basiclightbox';
 import { galleryItems } from './gallery-items';
 import imageURL from '../images/main_box.jpg';
 import svg from '../images/logo.svg';
-import fs from 'fs';
-const buffer = fs.readFileSync(__dirname + '/images/main_box.jpg');
+import icon from '../images/icons.svg#smartphone';
+import icon2 from '../images/icons.svg';
 
 const gallery = document.querySelector('.gallery');
 gallery.addEventListener('click', selectImage);
@@ -32,13 +32,22 @@ function selectImage(event) {
   }
   const instance = basicLightbox.create(
     `<div>
-            <h2>llsdflskd</h2>
+            <h2>===================</h2>
             <img class="logo_i" src="${svg}" alt="logo" />
-            <svg class="logo_i" width="24" height="24">
+            <svg class="logo_i" width="40" height="40">
               <use class="logo_i" href="${svg}"></use>
             </svg>
-
-            <img src = "${buffer}" width="100"/>
+            <h2>===================</h2>
+            <img class="logo_i" src="${icon}" alt="logo" />
+            <svg class="logo_i" width="40" height="40">
+              <use class="logo_i" href="${icon}"></use>
+            </svg>
+            <h2>===================</h2>
+            <img class="logo_i" src="${icon}" alt="logo" />
+            <svg class="logo_i" width="40" height="40">
+              <use class="logo_i" href="${icon}#smartphone"></use>
+            </svg>
+            <h2>===================</h2>
             <img src = "${imageURL}" width="150"/>
         </div>`,
 
